@@ -432,7 +432,7 @@ body.cart-open {
 .product-form__input input[type="radio"]:hover + .color-swatch:before {
   width: 80px;
   height: 5px;
-  background: #8fcc52;
+  background: #000;
   position: absolute;
   content: "";
   bottom: -10px;
@@ -458,7 +458,7 @@ body.cart-open {
 .product-form__input input[type="radio"]:hover + .swatch:before {
   width: 50px;
   height: 5px;
-  background: #8fcc52;
+  background: #000;
   position: absolute;
   content: "";
   bottom: -10px;
@@ -470,7 +470,7 @@ body.cart-open {
 
 .product-form__input input[type="radio"][name="Size"] + label:hover,
 .product-form__input input[type="radio"][name="Size"]:checked + label {
-  background: #8fcc52;
+  background: #000;
   color: #fff;
   border: 0;
 }
