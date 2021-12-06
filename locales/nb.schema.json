@@ -64,12 +64,6 @@
         "type_body_font": {
           "label": "Skrifttype",
           "info": "Dersom du velger en annen skrifttype kan det påvirke hastigheten i butikken. [Finn ut mer om systemskrifter.](https://help.shopify.com/en/manual/online-store/os/store-speed/improving-speed#fonts)"
-        },
-        "heading_scale": {
-          "label": "Skriftstørrelsens skala"
-        },
-        "body_scale": {
-          "label": "Skriftstørrelsens skala"
         }
       }
     },
@@ -123,6 +117,21 @@
     "social-media": {
       "name": "Sosiale medier",
       "settings": {
+        "share_facebook": {
+          "label": "Del på Facebook"
+        },
+        "share_twitter": {
+          "label": "Tweet på Twitter"
+        },
+        "share_pinterest": {
+          "label": "Pin på Pinterest"
+        },
+        "header__1": {
+          "content": "Knapper for deling på sosiale medier"
+        },
+        "header__2": {
+          "content": "Sosiale kontoer"
+        },
         "social_twitter_link": {
           "label": "Twitter",
           "info": "https://twitter.com/shopify"
@@ -491,6 +500,25 @@
           "label": "Vis forfatter"
         }
       },
+      "blocks": {
+        "title": {
+          "name": "Tittel",
+          "settings": {
+            "show_date": {
+              "label": "Vis dato"
+            },
+            "show_author": {
+              "label": "Vis forfatter"
+            }
+          }
+        },
+        "summary": {
+          "name": "Utdrag"
+        },
+        "link": {
+          "name": "Kobling"
+        }
+      },
       "presets": {
         "name": "Blogginnlegg"
       }
@@ -735,8 +763,7 @@
           "label": "Stable bilder på mobil"
         },
         "adapt_height_first_image": {
-          "label": "Tilpass seksjonshøyden til den første bildestørrelsen",
-          "info": "Overskriver innstillingen for bildebannerhøyde når den er avmerket."
+          "label": "Tilpass seksjonshøyden til den første bildestørrelsen"
         },
         "show_text_box": {
           "label": "Vis tekstboks på datamaskiner"
@@ -749,19 +776,6 @@
         },
         "show_text_below": {
           "label": "Vis tekst under bilder"
-        },
-        "image_height": {
-          "label": "Høyde på bildebanner",
-          "options__1": {
-            "label": "Liten"
-          },
-          "options__2": {
-            "label": "Middels"
-          },
-          "options__3": {
-            "label": "Stor"
-          },
-          "info": "Bruk et bilde med størrelsesforhold 2:3 for best resultat. [Finn ut mer](https://help.shopify.com/en/manual/shopify-admin/productivity-tools/image-editor#understanding-image-aspect-ratio)"
         }
       },
       "blocks": {
@@ -939,6 +953,9 @@
         "content": {
           "name": "Innhold"
         },
+        "social_sharing": {
+          "name": "Knapper for deling på sosiale medier"
+        },
         "share": {
           "name": "Del",
           "settings": {
@@ -998,6 +1015,25 @@
             "label": "Stor"
           },
           "info": "Bruk et bilde med størrelsesforhold 2:3 for best resultat. [Finn ut mer](https://help.shopify.com/en/manual/shopify-admin/productivity-tools/image-editor#understanding-image-aspect-ratio)"
+        }
+      },
+      "blocks": {
+        "title": {
+          "name": "Tittel",
+          "settings": {
+            "show_date": {
+              "label": "Vis dato"
+            },
+            "show_author": {
+              "label": "Vis forfatter"
+            }
+          }
+        },
+        "summary": {
+          "name": "Utdrag"
+        },
+        "link": {
+          "name": "Kobling"
         }
       }
     },
@@ -1086,6 +1122,9 @@
         },
         "show_image_outline": {
           "label": "Vis kantlinje for bilde"
+        },
+        "enable_sort": {
+          "label": "Aktiver sortering"
         },
         "collapse_on_larger_devices": {
           "label": "Lukk på større skjermer"
@@ -1623,6 +1662,9 @@
       "settings": {
         "heading": {
           "label": "Overskrift"
+        },
+        "header__1": {
+          "content": "Produktanbefalinger"
         },
         "header__2": {
           "content": "Produktkort"

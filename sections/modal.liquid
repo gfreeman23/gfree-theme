@@ -1,0 +1,92 @@
+<div id="modal">
+  <div href="" id="modal-close" class="modal-close"><i class="fal fa-times"></i></div>
+  <div id="modal-content" style="height: 100%; display: table;">
+    <div id="modal-content-wrap" style="display: table-cell; vertical-align: middle;">
+
+      {%- if section.settings.newsletter-modal-image != blank -%}
+        <div class="newsletter-modal-image"><img src="{{ section.settings.newsletter-modal-image | img_url: '600x' }}"></div>
+      {%- endif -%}
+      
+      {%- if section.settings.newsletter-modal-heading != blank -%}
+        <div class="newsletter-modal-heading"><h2>{{ section.settings.newsletter-modal-heading | escape }}</h2></div>
+      {%- endif -%}
+
+      {%- if section.settings.newsletter-modal-text != blank -%}
+        <div class="newsletter-modal-text"><p>{{ section.settings.newsletter-modal-text | escape }}</p></div>
+      {%- endif -%}
+          
+      {%- form 'customer', id: 'newsletter-modal-form', class: 'newsletter-modal-form' -%}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <div class="newsletter-modal-form-iput newsletter-form__field-wrapper">
+          <div class="field">
+            <input
+              id="NewsletterForm--{{ section.id }}"
+              type="email"
+              name="contact[email]"
+              class="field__input"
+              value="{{ form.email }}"
+              aria-required="true"
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete="email"
+              {% if form.errors %}
+                autofocus
+                aria-invalid="true"
+                aria-describedby="ContactFooter-error"
+              {% elsif form.posted_successfully? %}
+                aria-describedby="ContactFooter-success"
+              {% endif %}
+              placeholder="{{ 'newsletter.label' | t }}"
+              required
+            >
+            <label class="field__label" for="NewsletterForm--{{ section.id }}">
+              {{ 'newsletter.label' | t }}
+            </label>
+            <button type="submit" class="newsletter-form__button field__button" name="commit" id="Subscribe" aria-label="{{ 'newsletter.button_label' | t }}">
+              {% render 'icon-arrow' %}
+            </button>
+          </div>
+          {%- if form.errors -%}
+            <small class="newsletter-form__message form__message" id="ContactFooter-error">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
+          {%- endif -%}
+        </div>
+        {%- if form.posted_successfully? -%}
+          <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="ContactFooter-success" tabindex="-1" autofocus>{% render 'icon-success' %}{{ 'newsletter.success' | t }}</h3>
+        {%- endif -%}
+      {%- endform -%}
+      
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Newsletter Modal",
+  "class": "newsletter-modal",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "newsletter-modal-image",
+	  "label": "Newsletter Modal Image"
+    },
+    {
+      "type": "text",
+      "placeholder": "Newsletter Heading",
+      "id": "newsletter-modal-heading",
+	  "label": "Newsletter Modal Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "newsletter-modal-text",
+	  "label": "Newsletter Modal Text",
+      "placeholder": "Newsletter Modal Text"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

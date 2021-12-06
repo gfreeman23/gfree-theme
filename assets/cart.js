@@ -34,7 +34,7 @@ class CartItems extends HTMLElement {
     return [
       {
         id: 'main-cart-items',
-        section: document.getElementById('main-cart-items').dataset.id,
+        section: document.getElementById('main-cart-items').dataset.id || 'main-cart-items',
         selector: '.js-contents',
       },
       {
@@ -49,7 +49,7 @@ class CartItems extends HTMLElement {
       },
       {
         id: 'main-cart-footer',
-        section: document.getElementById('main-cart-footer').dataset.id,
+        section: document.getElementById('main-cart-footer').dataset.id || 'main-cart-footer',
         selector: '.js-contents',
       }
     ];

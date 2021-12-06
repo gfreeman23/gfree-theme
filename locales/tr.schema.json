@@ -64,12 +64,6 @@
         "type_body_font": {
           "label": "Yazı tipi",
           "info": "Farklı bir yazı tipi seçmeniz mağazanızın hızını etkileyebilir. [Sistem yazı tipleri hakkında daha fazla bilgi edinin.](https://help.shopify.com/en/manual/online-store/os/store-speed/improving-speed#fonts)"
-        },
-        "heading_scale": {
-          "label": "Yazı boyutu ölçeği"
-        },
-        "body_scale": {
-          "label": "Yazı boyutu ölçeği"
         }
       }
     },
@@ -123,6 +117,21 @@
     "social-media": {
       "name": "Sosyal medya",
       "settings": {
+        "share_facebook": {
+          "label": "Facebook'ta paylaş"
+        },
+        "share_twitter": {
+          "label": "Twitter'da tweet'le"
+        },
+        "share_pinterest": {
+          "label": "Pinterest'te pin ekle"
+        },
+        "header__1": {
+          "content": "Sosyal medya paylaşım seçenekleri"
+        },
+        "header__2": {
+          "content": "Sosyal medya hesapları"
+        },
         "social_twitter_link": {
           "label": "Twitter",
           "info": "https://twitter.com/shopify"
@@ -491,6 +500,25 @@
           "label": "Yazarı göster"
         }
       },
+      "blocks": {
+        "title": {
+          "name": "Başlık",
+          "settings": {
+            "show_date": {
+              "label": "Tarihi göster"
+            },
+            "show_author": {
+              "label": "Yazarı göster"
+            }
+          }
+        },
+        "summary": {
+          "name": "Alıntı"
+        },
+        "link": {
+          "name": "Bağlantı"
+        }
+      },
       "presets": {
         "name": "Blog gönderileri"
       }
@@ -735,8 +763,7 @@
           "label": "Mobilde görselleri üst üste ekle"
         },
         "adapt_height_first_image": {
-          "label": "Bölüm yüksekliğini ilk görselin boyutuna uyarla",
-          "info": "İşaretlendiğinde görüntü banner'ı yükseklik ayarının üzerine yazar."
+          "label": "Bölüm yüksekliğini ilk görselin boyutuna uyarla"
         },
         "show_text_box": {
           "label": "Masaüstünde metin kutusunu göster"
@@ -749,19 +776,6 @@
         },
         "show_text_below": {
           "label": "Metni görsellerin altında göster"
-        },
-        "image_height": {
-          "label": "Görsel banner'ı yüksekliği",
-          "options__1": {
-            "label": "Küçük"
-          },
-          "options__2": {
-            "label": "Orta"
-          },
-          "options__3": {
-            "label": "Büyük"
-          },
-          "info": "En iyi sonuçlar için 2:3 en-boy oranına sahip bir görsel kullanın. [Daha fazla bilgi edinin](https://help.shopify.com/en/manual/shopify-admin/productivity-tools/image-editor#understanding-image-aspect-ratio)"
         }
       },
       "blocks": {
@@ -939,6 +953,9 @@
         "content": {
           "name": "İçerik"
         },
+        "social_sharing": {
+          "name": "Sosyal medya paylaşım düğmeleri"
+        },
         "share": {
           "name": "Paylaş",
           "settings": {
@@ -998,6 +1015,25 @@
             "label": "Büyük"
           },
           "info": "En iyi sonuçlar için 2:3 en-boy oranına sahip bir görsel kullanın. [Daha fazla bilgi edinin](https://help.shopify.com/en/manual/shopify-admin/productivity-tools/image-editor#understanding-image-aspect-ratio)"
+        }
+      },
+      "blocks": {
+        "title": {
+          "name": "Başlık",
+          "settings": {
+            "show_date": {
+              "label": "Tarihi göster"
+            },
+            "show_author": {
+              "label": "Yazarı göster"
+            }
+          }
+        },
+        "summary": {
+          "name": "Alıntı"
+        },
+        "link": {
+          "name": "Bağlantı"
         }
       }
     },
@@ -1086,6 +1122,9 @@
         },
         "show_image_outline": {
           "label": "Görsel kenarlığını göster"
+        },
+        "enable_sort": {
+          "label": "Sıralamayı etkinleştir"
         },
         "collapse_on_larger_devices": {
           "label": "Daha büyük ekranlarda daralt"
@@ -1623,6 +1662,10 @@
       "settings": {
         "heading": {
           "label": "Başlık"
+        },
+        "header__1": {
+          "content": "Ürün önerileri",
+          "info": "Dinamik önerilerinin zamanla değişmesi ve gelişmesi için sipariş ve ürün bilgileri kullanılır. [Daha fazla bilgi edinin](https://help.shopify.com/en/themes/development/recommended-products)"
         },
         "header__2": {
           "content": "Ürün kartı"

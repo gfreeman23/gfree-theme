@@ -4,7 +4,6 @@ if (!customElements.get('product-form')) {
       super();
 
       this.form = this.querySelector('form');
-      this.form.querySelector('[name=id]').disabled = false;
       this.form.addEventListener('submit', this.onSubmitHandler.bind(this));
       this.cartNotification = document.querySelector('cart-notification');
     }
@@ -36,8 +35,12 @@ if (!customElements.get('product-form')) {
             this.handleErrorMessage(response.description);
             return;
           }
-
+        
           this.cartNotification.renderContents(response);
+          // added for minicart
+          document.querySelector('cart-items')?.classList.toggle('is-empty', response.item_count === 0);
+          document.getElementById('main-cart-items')?.classList.toggle('is-empty', response.item_count === 0); document.getElementById('main-cart-footer')?.classList.toggle('is-empty', response.item_count === 0);
+        
         })
         .catch((e) => {
           console.error(e);

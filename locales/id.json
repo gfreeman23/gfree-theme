@@ -7,6 +7,7 @@
       "login_form_password_placeholder": "Sandi Anda",
       "login_form_error": "Sandi salah!",
       "login_form_submit": "Masuk",
+      "modal": "Modal sandi",
       "admin_link_html": "Anda pemilik toko? <a href=\"/admin\" class=\"link underlined-link\">Login di sini</a>",
       "powered_by_shopify_html": "Toko ini didukung oleh {{ shopify }}"
     },
@@ -44,6 +45,7 @@
     },
     "share": {
       "copy_to_clipboard": "Salin tautan",
+      "share": "Bagikan",
       "share_url": "Tautan",
       "success_message": "Tautan disalin ke clipboard",
       "close": "Tutup bagikan"
@@ -77,6 +79,7 @@
     "article": {
       "blog": "Blog",
       "read_more_title": "Baca selengkapnya: {{ title }}",
+      "read_more": "Baca selengkapnya",
       "comments": {
         "one": "{{ count }} komentar",
         "other": "{{ count }} komentar"
@@ -244,7 +247,8 @@
       }
     },
     "footer": {
-      "payment": "Metode pembayaran"
+      "payment": "Metode pembayaran",
+      "social_placeholder": "Ikuti kami di media sosial!"
     },
     "featured_blog": {
       "view_all": "Lihat semua",

@@ -1,16 +1,13 @@
 {%- for block in section.blocks -%}
   {%- case block.type -%}
     {%- when 'announcement' -%}
-      <div class="announcement-bar color-{{ block.settings.color_scheme }} gradient" role="region" aria-label="{{ 'sections.header.announcement' | t }}" {{ block.shopify_attributes }}>
+      <div class="announcement-bar gradient"{%- unless section.settings.announcement_background_color == blank -%} style="background: {{ section.settings.announcement_background_color }}"{%- endunless -%} role="region" aria-label="{{ 'sections.header.announcement' | t }}" {{ block.shopify_attributes }}>
         {%- if block.settings.text != blank -%}
           {%- if block.settings.link != blank -%}
             <a href="{{ block.settings.link }}" class="announcement-bar__link link link--text focus-inset animate-arrow">
           {%- endif -%}
-              <p class="announcement-bar__message h5">
-                {{ block.settings.text | escape }}
-                {%- if block.settings.link != blank -%}
-                  {% render 'icon-arrow' %}
-                {%- endif -%}
+              <p class="announcement-bar__message h5"{%- unless section.settings.announcement_text_color == blank -%} style="color: {{ section.settings.announcement_text_color }}"{%- endunless -%}>
+                {%- unless block.settings.announcement_bar_icon == blank -%}{{ block.settings.announcement_bar_icon }} {%- endunless -%}{{ block.settings.text }}
               </p>
           {%- if block.settings.link != blank -%}
             </a>
@@ -24,49 +21,39 @@
 {
   "name": "t:sections.announcement-bar.name",
   "max_blocks": 12,
+  "settings": [
+    {
+      "type": "color",
+      "id": "announcement_background_color",
+      "label": "Announcement Background color"
+    },
+    {
+      "type": "color",
+      "id": "announcement_text_color",
+      "label": "Announcement Text color"
+    }
+  ],
   "blocks": [
     {
       "type": "announcement",
       "name": "t:sections.announcement-bar.blocks.announcement.name",
       "settings": [
         {
-          "type": "text",
+          "type": "richtext",
           "id": "text",
-          "default": "Welcome to our store",
-          "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
-        },
-        {
-          "type": "select",
-          "id": "color_scheme",
-          "options": [
-            {
-              "value": "background-1",
-              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__1.label"
-            },
-            {
-              "value": "background-2",
-              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__2.label"
-            },
-            {
-              "value": "inverse",
-              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__3.label"
-            },
-            {
-              "value": "accent-1",
-              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__4.label"
-            },
-            {
-              "value": "accent-2",
-              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__5.label"
-            }
-          ],
-          "default": "accent-1",
-          "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.label"
+		  "default": "<p>Welcome to our store</p>",
+          "label": "Rich Text"
         },
         {
           "type": "url",
           "id": "link",
           "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
+        },
+        {
+          "type": "html",
+          "id": "announcement_bar_icon",
+          "label": "Announcement Bar icon",
+          "info": "[View all available icons](https:\/\/fontawesome.com)"
         }
       ]
     }

@@ -7,6 +7,7 @@
       "login_form_password_placeholder": "Вашата парола",
       "login_form_error": "Неправилна парола.",
       "login_form_submit": "Въведете",
+      "modal": "Тип парола",
       "admin_link_html": "Вие ли сте собственикът на магазина? <a href=\"/admin\" class=\"link underlined-link\">Влезте тук</a>",
       "powered_by_shopify_html": "Този магазин ще се поддържа от {{ shopify }}"
     },
@@ -44,6 +45,7 @@
     },
     "share": {
       "copy_to_clipboard": "Копиране на връзката",
+      "share": "Споделяне",
       "share_url": "Връзка",
       "success_message": "Връзката е копирана в клипборда",
       "close": "Затваряне на споделянето"
@@ -77,6 +79,7 @@
     "article": {
       "blog": "Блог",
       "read_more_title": "Прочетете още: {{ title }}",
+      "read_more": "Прочетете още",
       "comments": {
         "one": "{{ count }} коментар",
         "other": "{{ count }} коментара"
@@ -244,7 +247,8 @@
       }
     },
     "footer": {
-      "payment": "Начини на плащане"
+      "payment": "Начини на плащане",
+      "social_placeholder": "Последвайте ни в социалните мрежи!"
     },
     "featured_blog": {
       "view_all": "Покажи всички",

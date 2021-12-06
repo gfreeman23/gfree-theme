@@ -64,12 +64,6 @@
         "type_body_font": {
           "label": "フォント",
           "info": "異なるフォントを選択すると、ストアの速度に影響を与える可能性があります。[システムフォントについて詳しく知る。](https://help.shopify.com/en/manual/online-store/os/store-speed/improving-speed#fonts)"
-        },
-        "heading_scale": {
-          "label": "フォント・サイズ・スケール"
-        },
-        "body_scale": {
-          "label": "フォント・サイズ・スケール"
         }
       }
     },
@@ -123,6 +117,21 @@
     "social-media": {
       "name": "SNS",
       "settings": {
+        "share_facebook": {
+          "label": "Facebookでシェアする"
+        },
+        "share_twitter": {
+          "label": "Twitterにツイートする"
+        },
+        "share_pinterest": {
+          "label": "Pinterestでピン留めする"
+        },
+        "header__1": {
+          "content": "SNSの共有オプション"
+        },
+        "header__2": {
+          "content": "ソーシャルアカウント"
+        },
         "social_twitter_link": {
           "label": "Twitter",
           "info": "https://twitter.com/shopify"
@@ -380,7 +389,8 @@
         }
       },
       "presets": {
-        "name": "コラージュ"
+        "name": "コラージュ",
+        "category": "画像"
       }
     },
     "collection-list": {
@@ -441,13 +451,15 @@
         }
       },
       "presets": {
-        "name": "コレクションリスト"
+        "name": "コレクションリスト",
+        "category": "コレクション"
       }
     },
     "contact-form": {
       "name": "お問い合わせフォーム",
       "presets": {
-        "name": "お問い合わせフォーム"
+        "name": "お問い合わせフォーム",
+        "category": "購入者エンゲージメント"
       }
     },
     "custom-liquid": {
@@ -459,7 +471,8 @@
         }
       },
       "presets": {
-        "name": "カスタムLiquid"
+        "name": "カスタムLiquid",
+        "category": "テキスト"
       }
     },
     "featured-blog": {
@@ -491,8 +504,28 @@
           "label": "執筆者を表示する"
         }
       },
+      "blocks": {
+        "title": {
+          "settings": {
+            "show_date": {
+              "label": "日付を表示する"
+            },
+            "show_author": {
+              "label": "執筆者を表示する"
+            }
+          },
+          "name": "タイトル"
+        },
+        "summary": {
+          "name": "サマリー"
+        },
+        "link": {
+          "name": "リンク"
+        }
+      },
       "presets": {
-        "name": "ブログ記事"
+        "name": "ブログ記事",
+        "category": "ブログ"
       }
     },
     "featured-collection": {
@@ -546,7 +579,8 @@
         }
       },
       "presets": {
-        "name": "特集コレクション"
+        "name": "特集コレクション",
+        "category": "コレクション"
       }
     },
     "footer": {
@@ -735,8 +769,7 @@
           "label": "モバイルで画像を重ねる"
         },
         "adapt_height_first_image": {
-          "label": "セクションの高さを最初の画像サイズに合わせる",
-          "info": "チェックすると、画像バナーの高さ設定が上書きされます。"
+          "label": "セクションの高さを最初の画像サイズに合わせる"
         },
         "show_text_box": {
           "label": "デスクトップ上にテキストボックスを表示する"
@@ -749,19 +782,6 @@
         },
         "show_text_below": {
           "label": "画像下にテキストを表示する"
-        },
-        "image_height": {
-          "label": "画像バナーの高さ",
-          "options__1": {
-            "label": "小"
-          },
-          "options__2": {
-            "label": "中"
-          },
-          "options__3": {
-            "label": "大"
-          },
-          "info": "画像のアスペクト比が2:3のものを使用すると最適です。[詳しくはこちら](https://help.shopify.com/en/manual/shopify-admin/productivity-tools/image-editor#understanding-image-aspect-ratio)"
         }
       },
       "blocks": {
@@ -817,7 +837,8 @@
         }
       },
       "presets": {
-        "name": "画像バナー"
+        "name": "画像バナー",
+        "category": "画像"
       }
     },
     "image-with-text": {
@@ -898,7 +919,8 @@
         }
       },
       "presets": {
-        "name": "テキスト付き画像"
+        "name": "テキスト付き画像",
+        "category": "画像"
       }
     },
     "main-article": {
@@ -938,6 +960,9 @@
         },
         "content": {
           "name": "コンテンツ"
+        },
+        "social_sharing": {
+          "name": "SNS共有ボタン"
         },
         "share": {
           "name": "共有",
@@ -998,6 +1023,25 @@
             "label": "大"
           },
           "info": "画像のアスペクト比が2:3のものを使用すると最適です。[詳しくはこちら](https://help.shopify.com/en/manual/shopify-admin/productivity-tools/image-editor#understanding-image-aspect-ratio)"
+        }
+      },
+      "blocks": {
+        "title": {
+          "settings": {
+            "show_date": {
+              "label": "日付を表示する"
+            },
+            "show_author": {
+              "label": "執筆者を表示する"
+            }
+          },
+          "name": "タイトル"
+        },
+        "summary": {
+          "name": "サマリー"
+        },
+        "link": {
+          "name": "リンク"
         }
       }
     },
@@ -1070,6 +1114,9 @@
         "header__1": {
           "content": "絞り込みと並び替え"
         },
+        "header__2": {
+          "content": "絞り込みと並び替え"
+        },
         "enable_tags": {
           "label": "絞り込みを有効にする",
           "info": "[絞り込みをカスタマイズする](/admin/menus)"
@@ -1086,6 +1133,9 @@
         },
         "show_image_outline": {
           "label": "画像の枠線を表示する"
+        },
+        "enable_sort": {
+          "label": "並べ替えを有効にする"
         },
         "collapse_on_larger_devices": {
           "label": "大画面で折りたたむ"
@@ -1263,6 +1313,10 @@
         },
         "share": {
           "settings": {
+            "header": {
+              "content": "共有",
+              "info": "オンラインストアからSNSにリンクを投稿すると、そのページの記事のサムネイルが表示されます。[詳しくはこちら](https://help.shopify.com/ja/manual/online-store/images/showing-social-media-thumbnail-images)。オンラインストアのタイトルと説明を設定します。[詳しくはこちら](https://help.shopify.com/ja/manual/promoting-marketing/seo/adding-keywords#set-a-title-and-description-for-your-online-store)"
+            },
             "featured_image_info": {
               "content": "SNSの投稿にリンクを含めると、そのページの記事のサムネイルがプレビュー画像として表示されます。[詳しくはこちら](https://help.shopify.com/en/manual/online-store/images/showing-social-media-thumbnail-images)。"
             },
@@ -1551,7 +1605,8 @@
         }
       },
       "presets": {
-        "name": "マルチカラム"
+        "name": "マルチカラム",
+        "category": "画像"
       }
     },
     "newsletter": {
@@ -1604,7 +1659,8 @@
         }
       },
       "presets": {
-        "name": "メール登録"
+        "name": "メール登録",
+        "category": "購入者エンゲージメント"
       }
     },
     "page": {
@@ -1615,14 +1671,22 @@
         }
       },
       "presets": {
-        "name": "ページ"
+        "name": "ページ",
+        "category": "購入者エンゲージメント"
       }
     },
     "product-recommendations": {
       "name": "おすすめ商品",
       "settings": {
+        "header": {
+          "info": "ダイナミックレコメンデーションでは、注文や商品の情報を利用して、時間の経過とともに変化し改善していきます。[詳しくはこちら](https://help.shopify.com/ja/themes/development/recommended-products)"
+        },
         "heading": {
           "label": "見出し"
+        },
+        "header__1": {
+          "content": "おすすめ商品",
+          "info": "動的レコメンデーションでは、注文や商品の情報を利用して、時間の経過とともに変化し改善していきます。[詳しくはこちら] (https://help.shopify.com/en/themes/development/recommended-products)"
         },
         "header__2": {
           "content": "商品カード"
@@ -1730,7 +1794,8 @@
         }
       },
       "presets": {
-        "name": "リッチテキスト"
+        "name": "リッチテキスト",
+        "category": "テキスト"
       }
     },
     "apps": {
