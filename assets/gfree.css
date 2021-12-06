@@ -1,9 +1,11 @@
+/* GFREE THEME 2.0 */
+
 /*** NEW STYLES ***/
-  
+
 .button {
   border-radius: 30px;
 }
-  
+
 .button.button--primary {
   background: #8fcc52;
   color: #fff;
@@ -12,18 +14,18 @@
 }
 
 /*** HEADER ***/
-  
+
 header.header {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-  
+
 header .list-menu a {
   font-size: 16px;
 }
-  
+
 /*** SEARCH ICON ***/
-  
+
 .header__icons {
   margin-right: 10px;
 }
@@ -35,30 +37,30 @@ header .list-menu a {
 }
 
 @media screen and (max-width: 749px) {
-  
+
   .header__icons {
     margin-right: 45px;
   }
-  
+
 }
-  
+
 /*** STICKY HEADER ***/
-  
+
 #sticky-header-wrap {
   position: sticky;
   top: 0;
   z-index: 10;
 }
-  
+
 /*** ANNOUNCEMENT BAR ***/
-  
+
 .announcement-bar {
   text-align: center;
   display: none;
   margin: 0;
   padding: 5px 10px;
 }
-  
+
 .announcement-bar.slick-initialized .slick-slide {
   display: block;
 }
@@ -86,7 +88,7 @@ header .list-menu a {
   font-size: inherit;
   padding: 0;
 }
-  
+
 /*** MODAL ***/
 
 #overlay {
@@ -140,25 +142,25 @@ header .list-menu a {
 #modal-content {
   text-align: center;
 }
-  
+
 .newsletter-modal-image img {
   max-width: 100%;
 }
-  
+
 .newsletter-modal-heading,
 .newsletter-modal-text,
 .newsletter-modal-form {
   padding: 0 20px;
 }
-  
+
 .newsletter-modal-heading h2 {
   margin: 10px 0 0 0;
 }
-  
+
 .newsletter-modal-text p {
   margin-top: 0;
 }
-  
+
 .newsletter-modal-form {
   margin-bottom: 40px;
 }
@@ -166,22 +168,22 @@ header .list-menu a {
 .newsletter-modal-form-iput {
   margin: 0 auto;
 }
-  
-  
+
+
 /*** NEW CART COLLECTION FIX ***/
 
 #product-grid.grid {
   visibility: visible;
 }
-  
-/*** HEADER RELATIVE ***/  
-  
+
+/*** HEADER RELATIVE ***/
+
 #shopify-section-header {
   position: relative;
-} 
-  
+}
+
 /*** NEW CART ***/
- 
+
 #new-cart {
   width: 40px;
   height: 40px;
@@ -198,28 +200,28 @@ header .list-menu a {
   right: 0;
   padding: 0 8px;
 }
-  
+
 #new-cart-button:hover {
   cursor: pointer;
 }
-  
+
 #new-cart i {
   font-size: 22px;
 }
-  
+
 #cart-icon-bubble {
   position: absolute;
   top: -1px;
   right: 40px;
 }
-  
+
 .cart-count-bubble {
   top: 0;
   right: 0;
   border: 1px solid #fff;
   border-radius: 50%;
 }
-  
+
 #new-cart-dropdown {
   width: 450px;
   background: #fff;
@@ -230,22 +232,22 @@ header .list-menu a {
   border-bottom: 1px solid #f1f1f1;
   border-left: 1px solid #f1f1f1;
 }
-  
+
 body.cart-open {
   background: rgba(0, 0, 0, .5);
 }
-  
+
 @media screen and (max-width: 749px) {
- 
+
   #new-cart-dropdown {
     width: 100vw;
     top: 58px;
   }
-  
+
   #new-cart-dropdown #new-cart-footer .page-width {
     padding-bottom: 20px;
   }
-  
+
 }
 
 #new-cart-dropdown .new-cart-item {
@@ -281,44 +283,44 @@ body.cart-open {
   margin: 0;
   padding: 0;
 }
-  
 
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
 #new-cart-dropdown .page-width {
   padding: 0 20px;
 }
-  
+
 #new-cart-dropdown .title-wrapper-with-link {
   margin: 20px 0 10px 0;
 }
-  
+
 #new-cart-dropdown .title.title--primary {
   font-size: 18px;
 }
-  
+
 #new-cart-dropdown .title-wrapper-with-link .underlined-link {
   display: none;
 }
-  
+
 #new-cart-dropdown #main-cart-items {
   padding-bottom: 0;
 }
-  
+
 #new-cart-dropdown table {
   border-collapse: collapse;
 }
-  
+
 #new-cart-dropdown tr {
   border-bottom: 1px solid #dadada;
 }
- 
+
 #new-cart-dropdown tr:last-of-type {
   border-bottom: 0;
 }
@@ -327,7 +329,7 @@ body.cart-open {
   padding: 10px;
   vertical-align: middle;
 }
-  
+
 #new-cart-dropdown .cart-item td.cart-item__media {
   max-width: 70px;
   font-size: 0;
@@ -344,7 +346,7 @@ body.cart-open {
   position: relative;
   display: table-cell;
 }
-  
+
 #new-cart-dropdown .quantity {
   width: 60px;
   height: 35px;
@@ -352,11 +354,11 @@ body.cart-open {
   top: 50%;
   transform: translateY(-50%);
 }
-  
+
 #new-cart-dropdown .quantity .quantity__button {
   width: 20px;
 }
-  
+
 #new-cart-dropdown cart-remove-button {
   width: 20px;
   position: absolute;
@@ -365,36 +367,36 @@ body.cart-open {
   transform: translateY(-50%);
   margin: 0;
 }
-  
+
 #new-cart-dropdown cart-remove-button .button {
   min-width: 20px;
   min-height: 45px;
 }
-  
+
 #new-cart-dropdown td.cart-item__totals {
   padding-right: 0;
 }
-  
+
 #new-cart-dropdown td .price.price--end {
   margin-top: 0;
 }
-  
+
 #new-cart-dropdown .cart__footer {
   padding: 20px 0 10px 0;
 }
-  
+
 #new-cart-dropdown .cart__footer .cart__blocks {
   width: 100%;
 }
-  
+
 #new-cart-dropdown .cart__footer .cart__ctas button {
   max-width: 100%;
 }
-  
+
 #new-cart-dropdown .additional-checkout-buttons {
   max-width: 100%;
 }
-  
+
 #new-cart-dropdown #new-cart-subtotal {
   color: #000;
   font-size: 14px;
@@ -402,21 +404,21 @@ body.cart-open {
   line-height: 1.3;
   margin: 10px 0;
 }
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
 /*** SWATCHES ***/
-  
+
 /* SWATCHES - Color */
-  
+
 .product-form__input input[type='radio'] + label.color-swatch:hover {
   border: 0;
 }
-  
+
 .product-form__input input[type="radio"] + .color-swatch {
   width: 80px;
   height: 80px;
@@ -463,9 +465,9 @@ body.cart-open {
   left: 0;
   border: 0;
 }
-  
+
 /* SWATCHES - Size */
-  
+
 .product-form__input input[type="radio"][name="Size"] + label:hover,
 .product-form__input input[type="radio"][name="Size"]:checked + label {
   background: #8fcc52;
@@ -477,9 +479,9 @@ body.cart-open {
 .product-form__input input[type="radio"][name="Size"]:checked + label:before {
   display: none;
 }
-  
+
 /* SWATCHES - Disable Out of Stock */
-  
+
 .product-form__input input[type='radio']:disabled + label,
 .product-form__input input[type='radio'].unavailable + label {
   position: relative;
@@ -497,17 +499,17 @@ body.cart-open {
   top: -2px;
   left: 0;
 }
-  
+
 /*** PDP ***/
-  
+
 /* PDP - Responsive Fix */
 
 @media screen and (max-width: 749px) {
-  
+
   .slider.product__media-list .product__media-item:first-of-type {
     padding-right: 1.5rem;
   }
-  
+
   .product product-form.product-form {
     position: fixed;
     bottom: 20px;
@@ -515,23 +517,19 @@ body.cart-open {
     z-index: 1;
     margin: 0;
   }
-  
+
 }
 
 /* PDP - Price */
-  
+
 .price .price-item {
   font-size: 20px;
   line-height: 36px;
 }
-  
+
 /* PDP - Review Stars */
-  
+
 .spr-starrating a.link {
   text-decoration: none;
   margin: 0 2px;
 }
-
-  
-  
-  
