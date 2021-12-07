@@ -530,12 +530,9 @@
   	lazyLoad: 1,
   	wrapAround: true,
   	pageDots: false,
-  	{ %
-  		if product.images.size < 2 %
-  	}
+  	{% if product.images.size < 2 %}
   	prevNextButtons: false,
-  	{ % endif %
-  	}
+  	{% endif %}
   	adaptiveHeight: true
   });
   var elemThumbnail = document.querySelector('.carousel.product__image-thumbnail');
