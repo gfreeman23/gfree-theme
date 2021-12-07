@@ -1,0 +1,36 @@
+/*** ANNOUNCEMENT BAR ***/
+
+.announcement-bar {
+  text-align: center;
+  display: none;
+  margin: 0;
+  padding: 5px 10px;
+}
+  
+.announcement-bar.slick-initialized .slick-slide {
+  display: block;
+}
+
+.announcement-bar p {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 300;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.announcement-bar p strong {
+  color: #8fcc52;
+  font-weight: inherit;
+}
+
+.announcement-bar i {
+  color: #fff;
+  margin-right: 5px;
+}
+
+.announcement-bar .announcement-bar__link {
+  font-size: inherit;
+  padding: 0;
+}
