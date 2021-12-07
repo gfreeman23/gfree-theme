@@ -1,3 +1,5 @@
+{{ 'section-announcement-bar.css' | asset_url | stylesheet_tag }}
+
 {%- for block in section.blocks -%}
   {%- case block.type -%}
     {%- when 'announcement' -%}
