@@ -566,7 +566,14 @@ customElements.define('slider-component', SliderComponent);
 class VariantSelects extends HTMLElement {
   constructor() {
     super();
+    this.initLoad();
     this.addEventListener('change', this.onVariantChange);
+  }
+
+  initLoad(){
+    this.updateOptions();
+    this.updateMasterId();
+    this.updateMedia();
   }
 
   onVariantChange() {
@@ -602,22 +609,26 @@ class VariantSelects extends HTMLElement {
   updateMedia() {
     if (!this.currentVariant) return;
     if (!this.currentVariant.featured_media) return;
-    const newMedia = document.querySelector(
-      `[data-media-id="${this.dataset.section}-${this.currentVariant.featured_media.id}"]`
-    );
-
-    if (!newMedia) return;
-    const modalContent = document.querySelector(`#ProductModal-${this.dataset.section} .product-media-modal__content`);
-    const newMediaModal = modalContent.querySelector( `[data-media-id="${this.currentVariant.featured_media.id}"]`);
-    const parent = newMedia.parentElement;
-    if (parent.firstChild == newMedia) return;
-    modalContent.prepend(newMediaModal);
-    parent.prepend(newMedia);
-    this.stickyHeader = this.stickyHeader || document.querySelector('sticky-header');
-    if(this.stickyHeader) {
-      this.stickyHeader.dispatchEvent(new Event('preventHeaderReveal'));
+    var current_media_id = this.currentVariant.featured_media.id;
+    if (document.querySelector('.product__image-slider')) {
+      var media_len = document.querySelector('.product__image-slider .flickity-slider').childElementCount;
+      var media_id_array = [];
+    for (let i = 0; i < media_len; i++) {
+      media_id_array.push(parseInt(document.querySelector('.product__image-slider').querySelectorAll("img")[i].getAttribute('data-media-id')));
     }
-    window.setTimeout(() => { parent.querySelector('li.product__media-item').scrollIntoView({behavior: "smooth"}); });
+    flkty.select(media_id_array.indexOf(current_media_id));
+    }
+    else if (document.querySelector('.product__media-list')) {
+      var featured_product_media_len = document.querySelector('.product__media-list').childElementCount;
+      for (let i = 0; i < featured_product_media_len; i++) {
+        var child = document.querySelector('.product__media-list').children[i];
+        if (child.getAttribute('data-media-id').indexOf(current_media_id) > 0) {
+          child.style.display = "block";
+        } else {
+          child.style.display = "none";
+        }
+      }
+    }
   }
 
   updateURL() {
@@ -736,4 +747,3 @@ class VariantRadios extends VariantSelects {
 }
 
 customElements.define('variant-radios', VariantRadios);
-

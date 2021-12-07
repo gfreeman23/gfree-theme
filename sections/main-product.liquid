@@ -20,53 +20,50 @@
 
 <section class="page-width">
   <div class="product grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+
+
+
     <div class="grid__item product__media-wrapper">
-      <slider-component class="slider-mobile-gutter">
-        <a class="skip-to-content-link button visually-hidden" href="#ProductInfo-{{ section.id }}">
-          {{ "accessibility.skip_to_product_info" | t }}
-        </a>
-        <ul class="product__media-list grid grid--peek list-unstyled slider slider--mobile" role="list">
-          {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
-          {%- if product.selected_or_first_available_variant.featured_media != null -%}
-            {%- assign media = product.selected_or_first_available_variant.featured_media -%}
-            <li class="product__media-item grid__item slider__slide{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
-              {% render 'product-thumbnail', media: media, position: 'featured', loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true %}
-            </li>
-          {%- endif -%}
-          {%- for media in product.media -%}
-            {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
-              <li class="product__media-item grid__item slider__slide{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
-                {% render 'product-thumbnail', media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true %}
-              </li>
-            {%- endunless -%}
-          {%- endfor -%}
-        </ul>
-        <div class="slider-buttons no-js-hidden{% if product.media.size < 2 %} small-hide{% endif %}">
-          <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'accessibility.previous_slide' | t }}">{% render 'icon-caret' %}</button>
-          <div class="slider-counter caption">
-            <span class="slider-counter--current">1</span>
-            <span aria-hidden="true"> / </span>
-            <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
-            <span class="slider-counter--total">{% if section.settings.hide_variants %}{{ product.media.size | minus: variant_images.size | plus: 1 }}{% else %}{{ product.media.size }}{% endif %}</span>
-          </div>
-          <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'accessibility.next_slide' | t }}">{% render 'icon-caret' %}</button>
+      {% if product.images != null %}
+      <div class="carousel product__image-slider" role="document" aria-label="{{ 'products.modal.label' | t }}" tabindex="0">
+        {%- for media in product.media -%}
+        <div class="carousel-cell">
+          <img data-flickity-lazyload-srcset="
+          {{ media | img_url: '1440x' }} 1440w,
+          {{ media | img_url: '1080x' }} 1080w,
+          {{ media | img_url: '720x' }} 767w,
+          {{ media | img_url: '480x' }} 480w"
+          sizes="(min-width: 480px) 1440px, 1080px, 767px, 480x"
+          data-flickity-lazyload-src="{{ media | img_url: 'master' }}"
+          alt="{{ media.alt | escape }}"
+          border="0"
+          data-media-id="{{ media.id }}" />
         </div>
-      </slider-component>
-      {%- if first_3d_model -%}
-        <button
-          class="button button--full-width product__xr-button"
-          type="button"
-          aria-label="{{ 'products.product.xr_button_label' | t }}"
-          data-shopify-xr
-          data-shopify-model3d-id="{{ first_3d_model.id }}"
-          data-shopify-title="{{ product.title | escape }}"
-          data-shopify-xr-hidden
-        >
-          {% render 'icon-3d-model' %}
-          {{ 'products.product.xr_button' | t }}
-        </button>
-      {%- endif -%}
+        {%- endfor -%}
+      </div>
+      {% if product.images.size > 1 %}
+      <div class="carousel product__image-thumbnail">
+        {%- for media in product.media -%}
+        <div class="carousel-cell">
+          <img data-flickity-lazyload-srcset="
+          {{ media | img_url: '1440x' }} 1440w,
+          {{ media | img_url: '1080x' }} 1080w,
+          {{ media | img_url: '720x' }} 767w,
+          {{ media | img_url: '480x' }} 480w"
+          sizes="(min-width: 480px) 1440px, 1080px, 767px, 480x"
+          data-flickity-lazyload-src="{{ media | img_url: 'master' }}"
+          alt="{{ media.alt | escape }}"
+          border="0"
+          data-media-id="{{ media_id }}" />
+        </div>
+        {%- endfor -%}
+      </div>
+      {% endif %}
+      {% else %}
+      {{ 'product-1' | placeholder_svg_tag }}
+      {% endif %}
     </div>
+
     <div class="product__info-wrapper grid__item">
       <div id="ProductInfo-{{ section.id }}" class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}">
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
@@ -523,6 +520,33 @@
       {%- endfor -%}
     ]
   }
+</script>
+
+<script>
+  var elem = document.querySelector('.carousel.product__image-slider');
+  var flkty = new Flickity(elem, {
+  	contain: true,
+  	imagesLoaded: true,
+  	lazyLoad: 1,
+  	wrapAround: true,
+  	pageDots: false,
+  	{ %
+  		if product.images.size < 2 %
+  	}
+  	prevNextButtons: false,
+  	{ % endif %
+  	}
+  	adaptiveHeight: true
+  });
+  var elemThumbnail = document.querySelector('.carousel.product__image-thumbnail');
+  var flktyB = new Flickity(elemThumbnail, {
+  	asNavFor: '.carousel.product__image-slider',
+  	contain: true,
+  	imagesLoaded: true,
+  	lazyLoad: 3,
+  	pageDots: false,
+  	prevNextButtons: false
+  });
 </script>
 
 {% schema %}
