@@ -44,15 +44,15 @@
           "586b98b4-8fe3-4566-b00e-72eedec777ad"
         ],
         "settings": {
-          "announcement_background_color": "#121212",
-          "announcement_text_color": "#8fcc52"
+          "announcement_background_color": "#0268a0",
+          "announcement_text_color": "#ffffff"
         }
       },
       "header": {
         "type": "header",
         "settings": {
           "color_scheme": "background-1",
-          "logo": "shopify:\/\/shop_images\/logo-green.png",
+          "logo": "shopify:\/\/shop_images\/logo-dark-blue.png",
           "logo_width": 70,
           "logo_position": "middle-left",
           "menu": "main-menu",
