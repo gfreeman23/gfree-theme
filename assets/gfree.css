@@ -7,9 +7,9 @@
 }
 
 .button.button--primary {
-  background: #8fcc52;
+  background: #0268a0;
   color: #fff;
-  border: 1px solid #8fcc52;
+  border: 1px solid #0268a0;
   box-shadow: none;
 }
 
@@ -75,8 +75,8 @@ header .list-menu a {
 }
 
 .announcement-bar p strong {
-  color: #8fcc52;
-  font-weight: inherit;
+  color: #fff;
+  font-weight: 600;
 }
 
 .announcement-bar i {
