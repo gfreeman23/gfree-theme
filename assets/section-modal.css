@@ -79,9 +79,14 @@
   margin: 0 auto;
 }
 
+#modal input {
+  border-radius: 45px;
+}
+
 #modal .newsletter-form__button {
   width: 45px;
   height: 45px;
   background: #0268a0;
   color: #fff;
+  border-radius: 45px;
 }
