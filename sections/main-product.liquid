@@ -106,10 +106,6 @@
                 {{ product.description }}
               </div>
             {%- endif -%}
-
-            {% if product.selected_or_first_available_variant.available == false %}Ohhhh this is disabled fam{% endif %}
-
-
           {%- when 'custom_liquid' -%}
             {{ block.settings.custom_liquid }}
           {%- when 'collapsible_tab' -%}
