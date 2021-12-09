@@ -161,10 +161,6 @@ header .header__menu-item span {
   border-left: 1px solid #f1f1f1;
 }
 
-body.cart-open {
-  background: rgba(0, 0, 0, .5);
-}
-
 @media screen and (max-width: 749px) {
 
   #new-cart-dropdown {
