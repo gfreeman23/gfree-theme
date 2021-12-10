@@ -346,6 +346,31 @@
             </div>
 
             <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
+          
+          
+            {%- when 'product_notes' -%}          
+            {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'note' -%}
+                <div class="product_notes gradient"{%- unless section.settings.note_background_color == blank -%} style="background: {{ section.settings.note_background_color }}"{%- endunless -%} role="region" aria-label="{{ 'sections.header.note' | t }}" {{ block.shopify_attributes }}>
+                  {%- if block.settings.text != blank -%}
+                    {%- if block.settings.link != blank -%}
+                      <a href="{{ block.settings.link }}" class="product_notes__link link link--text focus-inset animate-arrow">
+                    {%- endif -%}
+                        <p class="product_notes__message h5"{%- unless section.settings.note_text_color == blank -%} style="color: {{ section.settings.note_text_color }}"{%- endunless -%}>
+                          {%- unless block.settings.note_bar_icon == blank -%}{{ block.settings.note_bar_icon }} {%- endunless -%}{{ block.settings.text }}
+                        </p>
+                    {%- if block.settings.link != blank -%}
+                      </a>
+                    {%- endif -%}
+                  {%- endif -%}
+                </div>
+            {%- endcase -%}
+            {%- endfor -%}
+          
+          
+          
+          
           {%- when 'rating' -%}
             {%- if product.metafields.reviews.rating.value != blank -%}
               {% liquid
@@ -646,25 +671,27 @@
     },
 
 
+
+
     {
-      "name": "t:sections.announcement-bar.name",
+      "name": "product_notes",
       "max_blocks": 12,
       "settings": [
         {
           "type": "color",
-          "id": "announcement_background_color",
-          "label": "Announcement Background color"
+          "id": "note_background_color",
+          "label": "Note Background color"
         },
         {
           "type": "color",
-          "id": "announcement_text_color",
-          "label": "Announcement Text color"
+          "id": "note_text_color",
+          "label": "Note Text color"
         }
       ],
       "blocks": [
         {
-          "type": "announcement",
-          "name": "t:sections.announcement-bar.blocks.announcement.name",
+          "type": "note",
+          "name": "product_note",
           "settings": [
             {
               "type": "richtext",
@@ -673,14 +700,9 @@
               "label": "Rich Text"
             },
             {
-              "type": "url",
-              "id": "link",
-              "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
-            },
-            {
               "type": "html",
-              "id": "announcement_bar_icon",
-              "label": "Announcement Bar icon",
+              "id": "note_icon",
+              "label": "Note icon",
               "info": "[View all available icons](https:\/\/fontawesome.com)"
             }
           ]
@@ -689,7 +711,7 @@
       "default": {
         "blocks": [
           {
-            "type": "announcement"
+            "type": "note"
           }
         ]
       }
