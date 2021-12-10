@@ -5,7 +5,7 @@
         {%- if block.settings.text != blank -%}
           <p class="product-notes__message h5"{%- unless section.settings.note_text_color == blank -%} style="color: {{ section.settings.note_text_color }}"{%- endunless -%}>
             {%- unless block.settings.note_bar_icon == blank -%}{{ block.settings.note_bar_icon }} {%- endunless -%}{{ block.settings.text }}
-          </p>
+          </p> 
         {%- endif -%}
       </div>
   {%- endcase -%}
